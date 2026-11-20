@@ -1,0 +1,142 @@
+{
+  "native/mount_query_signature.h": {
+    "source": "pixelshift-sd-test-research-20261117/mount_query_signature.h",
+    "original_sha256": "d841b495ab7ad69ebfae89542dca9980fc3c5e7fdfa591a277a34116e55a6df9",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/sd_write_helpers.h": {
+    "source": "pixelshift-sd-test-research-20261117/sd_write_helpers.h",
+    "original_sha256": "ac9cc5d0121151c90a0679f6a1eb79ddbc5be767bdd09fa191cac897eb727d38",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/sd_read_helpers.h": {
+    "source": "pixelshift-sd-test-research-20261117/sd_read_helpers.h",
+    "original_sha256": "16e799bb04ac74d2e66a645fd89ac1e65aea4774867b1b94add13fe3f39ff657",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/metadata_candidates.h": {
+    "source": "pixelshift-sd-test-research-20261117/metadata_candidates.h",
+    "original_sha256": "f65a13b10521f62adfb3452910b71bffc5cc9da722fa38193951867bab80bc5d",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/arw_u16.h": {
+    "source": "arw-stream-research-20261116/arw_u16.h",
+    "original_sha256": "7397e34fa78a98b3eb2590b5f58bd229469ce7e2b4f768f60a9c663100f779d2",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/arw_u16.c": {
+    "source": "arw-stream-research-20261116/arw_u16.c",
+    "original_sha256": "959b6902f3109bd59d34cd698e2bb36bc0a9ef792f21ab5155a0d0a4aa1d741e",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/capture_info.h": {
+    "source": "pixelshift-integrated-20261116/capture_info.h",
+    "original_sha256": "d59be4f725aa54ba466fcdfe67d2eba9213659e2a3b3a7691abe14c37cbdbc60",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/capture_info.c": {
+    "source": "pixelshift-integrated-20261116/capture_info.c",
+    "original_sha256": "b7cb461b6c37efe296af0ac7ec650b54b50cdf305c676934cacb650097ecee2b",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/sd_metadata.c": {
+    "source": "pixelshift-sd-test-research-20261117/sd_metadata.c",
+    "original_sha256": "06dfd302f5773cb966a5751277165c05567a9ff669555057252d9052400b63a5",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/stream_pipeline.h": {
+    "source": "pixelshift-aligned-stream-camera-20261120/src/stream_pipeline.h",
+    "original_sha256": "036e2c6ee360ba687c74cf7a6f00a3f91607a9c28a52b199d47f2c8a0266ceb1",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/crc_neon.h": {
+    "source": "pixelshift-speed-route-20261118/crc_neon.h",
+    "original_sha256": "01ad07a6ca1f415522ce3e177e3801f80672d16be34405a4e73da32083c621e8",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/capture_metadata.h": {
+    "source": "pixelshift-correctness-repair-20261117/capture_metadata.h",
+    "original_sha256": "98b92fd39593bc63c817084e50fd8e6247f93d2eb2c5de8de7443d85d5fc66ac",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/exif_complete.h": {
+    "source": "pixelshift-correctness-repair-20261117/exif_complete.h",
+    "original_sha256": "0d094f42740779a8a8c3bd3c2464e92387fa4c3e86ba2907a92dbffa47802336",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/three_trace.h": {
+    "source": "pixelshift-aligned-stream-camera-20261120/src/three_trace.h",
+    "original_sha256": "08cc6469e54bba5e9e6ec7ddbb223aa9e7e5d8ffa1784f9df1e955908f32cd1a",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/rename_signature.inc": {
+    "source": "pixelshift-aligned-stream-camera-20261120/rename_signature.inc",
+    "original_sha256": "77fb4bde58528e4208227b1f28de31610b3eb6febb92fc3b05379e56021ffa18",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/source_pool.h": {
+    "source": "pixelshift-aligned-stream-camera-20261120/source_pool.h",
+    "original_sha256": "55e20de6db5800672764efab03cf599767b1a85331941e7fd73f416bb180558b",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/native_cache.h": {
+    "source": "pixelshift-aligned-stream-camera-20261120/native_cache.h",
+    "original_sha256": "563ac2096c37bf6b6642f944c13b247c386e684b835d33c88efae5cf807dd810",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/mpf_preview.h": {
+    "source": "pixelshift-aligned-stream-camera-20261120/mpf_preview.h",
+    "original_sha256": "a5a798ad451639939b96a69109714b46ef87be3fd005e11e06d7eed309b29105",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/stb_422_batch.h": {
+    "source": "pixelshift-optimized-test-20261118/stb_422_batch.h",
+    "original_sha256": "6f33b0fb76811f6893193af6c978967ddce47e1bb569cf383b7c210ae4976e43",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/target_module.c": {
+    "source": "pixelshift-aligned-stream-camera-20261120/target_module.c",
+    "original_sha256": "7bf7fccc5373ca86de87c3456b9f688b607e4582127fff1674ea382791915122",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/stream_slots.h": {
+    "source": "pixelshift-aligned-stream-camera-20261120/src/stream_slots.h",
+    "original_sha256": "3bc21c3b4751e8edfb75807201da3475fc0c9824f21622e245d30023bb41cff9",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/gather_rgb.h": {
+    "source": "pixelshift-speed-route-20261118/gather_rgb.h",
+    "original_sha256": "346bbbc681924af9515b2518cb6d9de27eafb7423c237823b982f546a0bee7d1",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/stream_core.c": {
+    "source": "pixelshift-aligned-stream-camera-20261120/src/stream_core.c",
+    "original_sha256": "e13dd00a7dd5b851ee8650f1bc53ff1cb438e36c572b528286b8288b57545dec",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/srgb16.h": {
+    "source": "pixelshift-correctness-repair-20261117/srgb16.h",
+    "original_sha256": "7bf080685856dce4b94960f39a1247e202ba1be6f01e902d836194e6215ee927",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/render_neon.h": {
+    "source": "pixelshift-speed-route-20261118/render_neon.h",
+    "original_sha256": "3b39b40f4b93e71b978db9e7948f3ea10b37c5aaeacd0f9f7df57238c1d81841",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/stream_jpeg.c": {
+    "source": "pixelshift-aligned-stream-camera-20261120/src/stream_jpeg.c",
+    "original_sha256": "c05fc4f1591b8e244ee55e6efb7bed8a23eb68683db5faaf7e3b7cddb80c7eb8",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/stream_pipeline.c": {
+    "source": "pixelshift-aligned-stream-camera-20261120/src/stream_pipeline.c",
+    "original_sha256": "9c97382dd750c056d50896e2e9e30ebea3e35075ba3dc31dbab1f82974b9be11",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  },
+  "native/stream_turbo.c": {
+    "source": "pixelshift-aligned-stream-camera-20261120/src/stream_turbo.c",
+    "original_sha256": "97a5716151ce3d1a11f980eb0a999d213c9778bb3047e5139f5dbf29c555ba09",
+    "change": "Only quoted include paths flattened; processing code unchanged."
+  }
+}

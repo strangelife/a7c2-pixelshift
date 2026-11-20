@@ -1,0 +1,944 @@
+{
+  "schema": 1,
+  "model": "ILCE-7CM2",
+  "firmware": "2.01",
+  "scope": "Offline fixed-image software-gate research; no camera installer.",
+  "images": {
+    "app": {
+      "size": 99960744,
+      "original_sha256": "2ea02f7ecbc5bb917316fe8ef4ce5ffd87eb66efaae78ba2ce11420552df539b",
+      "candidate_sha256": "5e85ef5de20798b099a5fbf8fecc63224f083e8691a236037c818b002bf1c3a9",
+      "changed_bytes": 46,
+      "field_edits": 28,
+      "edits": [
+        {
+          "offset": "0x5a2c376",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: main_parameter_0x130"
+        },
+        {
+          "offset": "0x59e0842",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: OFF"
+        },
+        {
+          "offset": "0x59e08fa",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 4 images"
+        },
+        {
+          "offset": "0x59e09b2",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 16 images"
+        },
+        {
+          "offset": "0x5a69f60",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 4 images interval option 0"
+        },
+        {
+          "offset": "0x5a69fd0",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 4 images interval option 1"
+        },
+        {
+          "offset": "0x5a6a040",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 4 images interval option 2"
+        },
+        {
+          "offset": "0x5a6a0b0",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 4 images interval option 3"
+        },
+        {
+          "offset": "0x5a6a120",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 4 images interval option 4"
+        },
+        {
+          "offset": "0x5a6a190",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 4 images interval option 5"
+        },
+        {
+          "offset": "0x5a6a200",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 4 images interval option 6"
+        },
+        {
+          "offset": "0x5a6a270",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 4 images interval option 7"
+        },
+        {
+          "offset": "0x5a6a2e0",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 4 images interval option 8"
+        },
+        {
+          "offset": "0x5a735a0",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 16 images interval option 0"
+        },
+        {
+          "offset": "0x5a73610",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 16 images interval option 1"
+        },
+        {
+          "offset": "0x5a73680",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 16 images interval option 2"
+        },
+        {
+          "offset": "0x5a736f0",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 16 images interval option 3"
+        },
+        {
+          "offset": "0x5a73760",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 16 images interval option 4"
+        },
+        {
+          "offset": "0x5a737d0",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 16 images interval option 5"
+        },
+        {
+          "offset": "0x5a73840",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 16 images interval option 6"
+        },
+        {
+          "offset": "0x5a738b0",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 16 images interval option 7"
+        },
+        {
+          "offset": "0x5a73920",
+          "before": "0000",
+          "after": "0100",
+          "reason": "menu: 16 images interval option 8"
+        },
+        {
+          "offset": "0x56bcda0",
+          "before": "68bb8b020000000000000000000000000000000000000000",
+          "after": "442347020000000002000000000000000300000000000000",
+          "reason": "bounded native property descriptor 0x5db"
+        },
+        {
+          "offset": "0x8bb590",
+          "before": "68bb8b0200000000",
+          "after": "4423470200000000",
+          "reason": "ELF relocation addend for 0x5db"
+        },
+        {
+          "offset": "0x56c10d8",
+          "before": "68bb8b020000000000000000000000000000000000000000",
+          "after": "442347020000000008000000000000000900000000000000",
+          "reason": "bounded native property descriptor 0x8a8"
+        },
+        {
+          "offset": "0x8c2418",
+          "before": "68bb8b0200000000",
+          "after": "4423470200000000",
+          "reason": "ELF relocation addend for 0x8a8"
+        },
+        {
+          "offset": "0x56c10f0",
+          "before": "68bb8b020000000000000000000000000000000000000000",
+          "after": "442347020000000008000000000000000900000000000000",
+          "reason": "bounded native property descriptor 0x8a9"
+        },
+        {
+          "offset": "0x8c2430",
+          "before": "68bb8b0200000000",
+          "after": "4423470200000000",
+          "reason": "ELF relocation addend for 0x8a9"
+        }
+      ]
+    },
+    "wbi": {
+      "size": 267171648,
+      "original_sha256": "db3730c8dbb2de71cfb7a66c343ba8e752e0f374a3a4104196ceac1e9d1b08dc",
+      "candidate_sha256": "30e694fdee97e101ef937c877c563e99adc25e6c8361b5e430df21f628173d8f",
+      "changed_bytes": 42,
+      "field_edits": 30,
+      "edits": [
+        {
+          "offset": "0x1be7576",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: main_parameter_0x130",
+          "app_relative_va": "0x5a3c376",
+          "physical": "0x403821376",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94d890",
+              "entry": "0xe0000403821fd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x2280a42",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: OFF",
+          "app_relative_va": "0x59f0842",
+          "physical": "0x406355842",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94d630",
+              "entry": "0xe0000406355fd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x2280afa",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 4 images",
+          "app_relative_va": "0x59f08fa",
+          "physical": "0x4063558fa",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94d630",
+              "entry": "0xe0000406355fd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x2280bb2",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 16 images",
+          "app_relative_va": "0x59f09b2",
+          "physical": "0x4063559b2",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94d630",
+              "entry": "0xe0000406355fd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c42160",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 4 images interval option 0",
+          "app_relative_va": "0x5a79f60",
+          "physical": "0x4038abf60",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94da78",
+              "entry": "0xe00004038abfd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c421d0",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 4 images interval option 1",
+          "app_relative_va": "0x5a79fd0",
+          "physical": "0x4038abfd0",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94da78",
+              "entry": "0xe00004038abfd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c40240",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 4 images interval option 2",
+          "app_relative_va": "0x5a7a040",
+          "physical": "0x4038aa040",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94da80",
+              "entry": "0xe00004038aafd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c402b0",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 4 images interval option 3",
+          "app_relative_va": "0x5a7a0b0",
+          "physical": "0x4038aa0b0",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94da80",
+              "entry": "0xe00004038aafd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c40320",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 4 images interval option 4",
+          "app_relative_va": "0x5a7a120",
+          "physical": "0x4038aa120",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94da80",
+              "entry": "0xe00004038aafd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c40390",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 4 images interval option 5",
+          "app_relative_va": "0x5a7a190",
+          "physical": "0x4038aa190",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94da80",
+              "entry": "0xe00004038aafd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c40400",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 4 images interval option 6",
+          "app_relative_va": "0x5a7a200",
+          "physical": "0x4038aa200",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94da80",
+              "entry": "0xe00004038aafd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c40470",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 4 images interval option 7",
+          "app_relative_va": "0x5a7a270",
+          "physical": "0x4038aa270",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94da80",
+              "entry": "0xe00004038aafd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c404e0",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 4 images interval option 8",
+          "app_relative_va": "0x5a7a2e0",
+          "physical": "0x4038aa2e0",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94da80",
+              "entry": "0xe00004038aafd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c517a0",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 16 images interval option 0",
+          "app_relative_va": "0x5a835a0",
+          "physical": "0x4038cb5a0",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94dac8",
+              "entry": "0xe00004038cbfd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c51810",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 16 images interval option 1",
+          "app_relative_va": "0x5a83610",
+          "physical": "0x4038cb610",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94dac8",
+              "entry": "0xe00004038cbfd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c51880",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 16 images interval option 2",
+          "app_relative_va": "0x5a83680",
+          "physical": "0x4038cb680",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94dac8",
+              "entry": "0xe00004038cbfd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c518f0",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 16 images interval option 3",
+          "app_relative_va": "0x5a836f0",
+          "physical": "0x4038cb6f0",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94dac8",
+              "entry": "0xe00004038cbfd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c51960",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 16 images interval option 4",
+          "app_relative_va": "0x5a83760",
+          "physical": "0x4038cb760",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94dac8",
+              "entry": "0xe00004038cbfd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c519d0",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 16 images interval option 5",
+          "app_relative_va": "0x5a837d0",
+          "physical": "0x4038cb7d0",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94dac8",
+              "entry": "0xe00004038cbfd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c51a40",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 16 images interval option 6",
+          "app_relative_va": "0x5a83840",
+          "physical": "0x4038cb840",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94dac8",
+              "entry": "0xe00004038cbfd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c51ab0",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 16 images interval option 7",
+          "app_relative_va": "0x5a838b0",
+          "physical": "0x4038cb8b0",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94dac8",
+              "entry": "0xe00004038cbfd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x1c51b20",
+          "before": "0000",
+          "after": "0100",
+          "reason": "saved menu: 16 images interval option 8",
+          "app_relative_va": "0x5a83920",
+          "physical": "0x4038cb920",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a18",
+              "entry": "0x40a94d003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a94dac8",
+              "entry": "0xe00004038cbfd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x2a0efa0",
+          "before": "681b59657f00000000000000000000000000000000000000",
+          "after": "448314657f00000002000000000000000300000000000000",
+          "reason": "saved bounded descriptor 0x5db",
+          "app_relative_va": "0x56ccda0",
+          "physical": "0x406f90da0",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a08",
+              "entry": "0x40ffc2003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40ffc2d10",
+              "entry": "0xe0000406f90fd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x2a262d8",
+          "before": "681b59657f00000000000000000000000000000000000000",
+          "after": "448314657f00000008000000000000000900000000000000",
+          "reason": "saved bounded descriptor 0x8a8",
+          "app_relative_va": "0x56d10d8",
+          "physical": "0x406fb80d8",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a08",
+              "entry": "0x40ffc2003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40ffc2d38",
+              "entry": "0xe0000406fb8fd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x2a262f0",
+          "before": "681b59657f00000000000000000000000000000000000000",
+          "after": "448314657f00000008000000000000000900000000000000",
+          "reason": "saved bounded descriptor 0x8a9",
+          "app_relative_va": "0x56d10f0",
+          "physical": "0x406fb80f0",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601a08",
+              "entry": "0x40ffc2003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40ffc2d38",
+              "entry": "0xe0000406fb8fd3"
+            }
+          ]
+        },
+        {
+          "offset": "0x70d8958",
+          "before": "02000000",
+          "after": "01000000",
+          "reason": "remove exactly one model-unavailable contribution from token 0x28c",
+          "app_relative_va": "0x7e19758",
+          "physical": "0x40c642758",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601aa8",
+              "entry": "0x40a961003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a961778",
+              "entry": "0xe800040c642f53"
+            }
+          ]
+        },
+        {
+          "offset": "0x70a93c4",
+          "before": "01000000",
+          "after": "00000000",
+          "reason": "remove exactly one model-unavailable contribution from token 0x2927",
+          "app_relative_va": "0x7e231c4",
+          "physical": "0x40c6121c4",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601aa8",
+              "entry": "0x40a961003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a9617c8",
+              "entry": "0xe800040c612f53"
+            }
+          ]
+        },
+        {
+          "offset": "0x84c028d",
+          "before": "01",
+          "after": "00",
+          "reason": "OFF inhibition output after its counter reaches zero",
+          "app_relative_va": "0x7e6f08d",
+          "physical": "0x40de9b08d",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601aa8",
+              "entry": "0x40a961003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a961a28",
+              "entry": "0xe800040de9bf53"
+            }
+          ]
+        },
+        {
+          "offset": "0x70a93c8",
+          "before": "02000000",
+          "after": "01000000",
+          "reason": "remove exactly one model-unavailable contribution from token 0x2928",
+          "app_relative_va": "0x7e231c8",
+          "physical": "0x40c6121c8",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601aa8",
+              "entry": "0x40a961003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a9617c8",
+              "entry": "0xe800040c612f53"
+            }
+          ]
+        },
+        {
+          "offset": "0x70a93cc",
+          "before": "02000000",
+          "after": "01000000",
+          "reason": "remove exactly one model-unavailable contribution from token 0x2929",
+          "app_relative_va": "0x7e231cc",
+          "physical": "0x40c6121cc",
+          "pte_trace": [
+            {
+              "shift": 30,
+              "pte_pa": "0x40fcaafe8",
+              "entry": "0x408601003"
+            },
+            {
+              "shift": 21,
+              "pte_pa": "0x408601aa8",
+              "entry": "0x40a961003"
+            },
+            {
+              "shift": 12,
+              "pte_pa": "0x40a9617c8",
+              "entry": "0xe800040c612f53"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "usb_serial_sha256": null,
+  "identity": {
+    "model": "ILCE-7CM2",
+    "serial_sha256": null
+  },
+  "files": {
+    "appFw.so": {
+      "bytes": 99960744,
+      "sha256": "c57b9830ceede99a0fc2ad52540df1df05ea26b3c0480e8425646a6d52eadc9b"
+    },
+    "cpapp-b.bin": {
+      "bytes": 18090880,
+      "sha256": "ec8227a1aab59503629c23be9a429e4360a35dd7118f07d1bc65d8e3ae16d3f5"
+    },
+    "libInfraFsys.so": {
+      "sha256": "33451a884b65f946ac8aca44b620cd3cec677d05752c52f2ff0e212a01824bfa"
+    },
+    "libc-2.25.so": {
+      "sha256": "f9104526eb7e5d2ea533c1a209bb0b83e69367f569e4c966895c8e106e6382c9"
+    },
+    "libpthread-2.25.so": {
+      "sha256": "7394f861930c45dd5076a700da5755faf0f6bed08544b0d60eadb85a14a7d592"
+    },
+    "libdl-2.25.so": {
+      "sha256": "6dde01ab92843eaf8c330f4cbd9b47186b14843c4e1de9f7c68ecacb3414403b"
+    }
+  }
+}

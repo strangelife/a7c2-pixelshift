@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+build/
+private/
+dist/
+*.private.*
+*.ARW
+*.JPG
+*.DNG
+*.so
+*.a
+*.exe
+*.bin
+*.zip
+.zig-cache/
+.zig-global/

@@ -1,0 +1,16 @@
+{
+  "app": {
+    "input_sha256": "2ea02f7ecbc5bb917316fe8ef4ce5ffd87eb66efaae78ba2ce11420552df539b",
+    "output_sha256": "5e85ef5de20798b099a5fbf8fecc63224f083e8691a236037c818b002bf1c3a9",
+    "changed_bytes": 46,
+    "full_roundtrip_passed": true
+  },
+  "wbi": {
+    "input_sha256": "db3730c8dbb2de71cfb7a66c343ba8e752e0f374a3a4104196ceac1e9d1b08dc",
+    "output_sha256": "30e694fdee97e101ef937c877c563e99adc25e6c8361b5e430df21f628173d8f",
+    "changed_bytes": 42,
+    "full_roundtrip_passed": true
+  },
+  "camera_io": false,
+  "firmware_distributed": false
+}

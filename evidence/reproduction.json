@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-20",
+  "cross_compile_passed": true,
+  "module_bytes": 432528,
+  "module_sha256": "9bca0b29700446f503027e6b60347623deb27dd48e823619d9af0cd50f654e87",
+  "historical_module_sha256": "9bca0b29700446f503027e6b60347623deb27dd48e823619d9af0cd50f654e87",
+  "byte_identical": true,
+  "zig_version": "0.13.0",
+  "target": "aarch64-linux-gnu.2.25",
+  "jpeg_archive_sha256": "b2db824adb96ed9f4c1864caff2ae5dae92bac135359f5ce3e8b4b2888e0138a",
+  "camera_executed": false,
+  "host_performance_test": false
+}
