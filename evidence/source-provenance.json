@@ -42,7 +42,7 @@
   "native/sd_metadata.c": {
     "source": "pixelshift-sd-test-research-20261117/sd_metadata.c",
     "original_sha256": "06dfd302f5773cb966a5751277165c05567a9ff669555057252d9052400b63a5",
-    "change": "Only quoted include paths flattened; processing code unchanged."
+    "change": "Quoted include paths flattened; runtime files moved to /tmp/a7c2-pixelshift/. Loader-file deletion removed where present. Pixel processing and synthesis parameters unchanged. This integration cleanup has not been executed on a camera."
   },
   "native/stream_pipeline.h": {
     "source": "pixelshift-aligned-stream-camera-20261120/src/stream_pipeline.h",
@@ -82,7 +82,7 @@
   "native/native_cache.h": {
     "source": "pixelshift-aligned-stream-camera-20261120/native_cache.h",
     "original_sha256": "563ac2096c37bf6b6642f944c13b247c386e684b835d33c88efae5cf807dd810",
-    "change": "Only quoted include paths flattened; processing code unchanged."
+    "change": "Quoted include paths flattened; runtime files moved to /tmp/a7c2-pixelshift/. Loader-file deletion removed where present. Pixel processing and synthesis parameters unchanged. This integration cleanup has not been executed on a camera."
   },
   "native/mpf_preview.h": {
     "source": "pixelshift-aligned-stream-camera-20261120/mpf_preview.h",
@@ -97,7 +97,7 @@
   "native/target_module.c": {
     "source": "pixelshift-aligned-stream-camera-20261120/target_module.c",
     "original_sha256": "7bf7fccc5373ca86de87c3456b9f688b607e4582127fff1674ea382791915122",
-    "change": "Only quoted include paths flattened; processing code unchanged."
+    "change": "Quoted include paths flattened; runtime files moved to /tmp/a7c2-pixelshift/. Loader-file deletion removed where present. Pixel processing and synthesis parameters unchanged. This integration cleanup has not been executed on a camera."
   },
   "native/stream_slots.h": {
     "source": "pixelshift-aligned-stream-camera-20261120/src/stream_slots.h",

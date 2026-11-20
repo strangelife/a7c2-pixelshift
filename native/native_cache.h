@@ -55,7 +55,7 @@ static void nc_export(void){
  if(nc_trace.magic[0]!='P'){memcpy(nc_trace.magic,"PSNCACHE",8);nc_trace.version=1;nc_trace.bytes=sizeof(nc_trace);nc_trace.global[NC_STATUS]=(i64)report.status;}
  if((i64)nc_trace.global[NC_STATUS]==-125)nc_trace.global[NC_STATUS]=(i64)report.status;
  for(u32 i=0;i<8;i++)nc_trace.frames[i][NF_CRC]=report.source_crc[i];
- i64 fd=sc(56,-100,(i64)"/tmp/jiritsu/ps-native-cache.trace",0xc1,0600,0,0);if(fd<0)return;
+ i64 fd=sc(56,-100,(i64)"/tmp/a7c2-pixelshift/ps-native-cache.trace",0xc1,0600,0,0);if(fd<0)return;
  for(u32 at=0;at<sizeof(nc_trace);){i64 n=sc(64,fd,(i64)((u8*)&nc_trace+at),sizeof(nc_trace)-at,0,0,0);if(n<=0||(u64)n>sizeof(nc_trace)-at)break;at+=(u32)n;}
  sc(82,fd,0,0,0,0,0);sc(57,fd,0,0,0,0,0);
 }

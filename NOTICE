@@ -9,7 +9,7 @@ with its existing MIT/public-domain license and author notices, retained in
 that file. The project's noncommercial restriction does not replace that license.
 libjpeg-turbo is an external dependency, not bundled as a library or source
 distribution. Its licensing information is in third_party/libjpeg-turbo/.
-Sony firmware, firmware snapshots, camera photographs, A7C2Tools, USB drivers,
+Sony firmware, firmware snapshots, camera photographs, USB drivers,
 device identifiers, complete readbacks and private calibration files are not
 distributed. Their copyrights and licenses are not changed by this project.
 The patch recipe contains bounded data edits and checksums, not firmware images.

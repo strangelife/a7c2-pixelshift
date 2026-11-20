@@ -103,7 +103,7 @@ static int flush_close(void){
 }
 static int capture_read(void *ctx,uint64_t at,void *p,uint32_t n){ArwU16 *a=ctx;if(at>a->file_bytes||n>a->file_bytes-at||n>65536)return -1;return camera_fseeko(a->file,(off_t)at,0)||camera_fread(p,1,n,a->file)!=n?-1:0;}
 static int load_curves(void){
-    u8 p[792],extra=0;i64 fd=sc(56,-100,(i64)"/tmp/jiritsu/ps-color-calibration.input",0,0,0,0);if(fd<0)return -1;
+    u8 p[792],extra=0;i64 fd=sc(56,-100,(i64)"/tmp/a7c2-pixelshift/ps-color-calibration.input",0,0,0,0);if(fd<0)return -1;
     i64 n=sc(63,fd,(i64)p,sizeof(p),0,0,0),tail=n==sizeof(p)?sc(63,fd,(i64)&extra,1,0,0,0):-1;sc(57,fd,0,0,0,0,0);
     if(n!=sizeof(p)||tail||memcmp(p,"PSCLR001",8)||m32(p+8)!=1||m32(p+12)!=792||m32(p+16)!=1256095283U||(crc_add(0xffffffffU,p+24,768)^0xffffffffU)!=m32(p+20))return -1;
     for(u32 c=0;c<3;c++)for(u32 i=1;i<256;i++)if(p[24+c*256+i]<p[24+c*256+i-1])return -1;
@@ -231,10 +231,9 @@ __attribute__((constructor(101))) static void native_run(void){
     hardware_crc=crc32_available();report.linear_crc=report.body_crc=body_tail_crc=0xffffffffU;
     for(u32 i=0;i<16;i++)report.source_crc[i]=0xffffffffU;
     if(hardware_crc)report.flags|=32768;else for(u32 i=0;i<256;i++){u32 c=i;for(u32 j=0;j<8;j++)c=(c>>1)^((0U-(c&1))&0xedb88320U);crc_table[i]=c;}
-    i64 out=sc(56,-100,(i64)"/tmp/jiritsu/a7c2.probe.result",0xc1,0600,0,0);if(out<0)return;
+    i64 out=sc(56,-100,(i64)"/tmp/a7c2-pixelshift/a7c2.probe.result",0xc1,0600,0,0);if(out<0)return;
     if(sc(64,out,(i64)&report,sizeof(report),0,0,0)!=(i64)sizeof(report)){sc(57,out,0,0,0,0,0);return;}
-    report.cleanup=sc(35,-100,(i64)"/tmp/jiritsu/libJit.so",0,0,0,0);
-    if(report.cleanup<0&&report.cleanup!=-2){error=(int)report.cleanup;goto finish;}
+    report.cleanup=0; /* Loader lifecycle is owned by the integrator. */
     if(load_curves()){error=-84;goto finish;}
     i64 fd=sc(56,-100,(i64)"/proc/self/maps",0,0,0,0);if(fd<0){error=(int)fd;goto finish;}
     u32 used=0;int bad=0;
@@ -304,7 +303,7 @@ finish:
     for(u32 i=0;i<16;i++)report.source_crc[i]^=0xffffffffU;
     report.mem_after=available();report.elapsed_ns=now()-started;
     nc_export();
-    i64 trace_fd=sc(56,-100,(i64)"/tmp/jiritsu/ps-j3-three.trace",0xc1,0600,0,0);
+    i64 trace_fd=sc(56,-100,(i64)"/tmp/a7c2-pixelshift/ps-j3-three.trace",0xc1,0600,0,0);
     if(trace_fd>=0){u32 trace_at=0;while(trace_at<sizeof(three_trace)){u32 count=sizeof(three_trace)-trace_at;if(count>65536)count=65536;i64 n=sc(64,trace_fd,(i64)((u8*)&three_trace+trace_at),count,0,0,0);if(n<=0||(u64)n>count)break;trace_at+=(u32)n;}sc(82,trace_fd,0,0,0,0,0);sc(57,trace_fd,0,0,0,0,0);}
     sc(68,out,(i64)&report,sizeof(report),0,0,0);sc(82,out,0,0,0,0,0);sc(57,out,0,0,0,0,0);
 }

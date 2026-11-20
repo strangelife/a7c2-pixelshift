@@ -64,10 +64,9 @@ static struct Metadata metadata;
 __attribute__((visibility("default"))) void _init(void){
     struct Report r={{'P','S','M','E','T','A','0','1'},1,64,-125,0,0,0,0,0,0};
     r.pid=sc(172,0,0,0,0,0,0);u64 start=now();
-    i64 out=sc(56,-100,(i64)"/tmp/jiritsu/a7c2.probe.result",0xc1,0600,0,0);if(out<0)return;
+    i64 out=sc(56,-100,(i64)"/tmp/a7c2-pixelshift/a7c2.probe.result",0xc1,0600,0,0);if(out<0)return;
     if(sc(64,out,(i64)&r,sizeof(r),0,0,0)!=(i64)sizeof(r)){sc(57,out,0,0,0,0,0);return;}
-    r.cleanup=sc(35,-100,(i64)"/tmp/jiritsu/libJit.so",0,0,0,0);
-    if(r.cleanup<0&&r.cleanup!=-2){r.status=r.cleanup;goto finish;}
+    r.cleanup=0; /* Loader lifecycle is owned by the integrator. */
     i64 fd=sc(56,-100,(i64)"/proc/self/maps",0,0,0,0);if(fd<0){r.status=fd;goto finish;}
     u32 used=0,retries=0;int bad=0;
     while(used<sizeof(maps)){

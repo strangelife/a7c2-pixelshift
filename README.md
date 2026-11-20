@@ -13,6 +13,10 @@
 
 Sony A7C II（ILCE-7CM2）像素位移解锁研究，以及 **16 帧 → 131 MP JPEG 的机内合成源码**。
 
+“C2”在本文中指 A7C II；“摇摇乐”指像素位移多重拍摄：拍摄多张传感器位置不同的 RAW，再将它们合成。项目分为两部分：**解锁研究**分析菜单和固件中的软件限制，**合成源码**负责把已经拍好的 16 张 ARW 处理成 JPEG。合成程序不会自动解锁拍摄功能。
+
+**当前交付的是研究源码，不是下载安装后即可在相机运行的应用。** 公开仓库可以独立进行离线检查；构建需要另行准备编译器及指定 JPEG 静态库。机内运行还缺设备连接与加载实现，以及历史测试照片和曲线文件。首次阅读请从 [项目原理与代码导读](docs/overview.md) 开始，无需阅读此前的聊天或研究记录。
+
 **真实机身记录：完整合成、写卡、完整读回和发布为 16.5295185 秒，四舍五入 16.530 秒。**
 
 English: Research code for Sony A7C II pixel-shift software gates and an on-camera 16-frame, 131 MP JPEG pipeline. The recorded 16.530 s includes synthesis, SD writing, full readback and publication. This is a firmware-specific reference implementation, not a general-purpose one-click camera application.
@@ -21,11 +25,11 @@ English: Research code for Sony A7C II pixel-shift software gates and an on-came
 
 | 内容 | 文件 | 状态 |
 | --- | --- | --- |
-| C2 摇摇乐解锁原理、既有研究与加载协议 | [docs/unlock.md](docs/unlock.md) | 包含菜单、支持表、重定位、快照和实机反馈的证据边界 |
+| C2 摇摇乐解锁原理与既有研究 | [docs/unlock.md](docs/unlock.md) | 包含菜单、支持表、重定位、快照和实机反馈的证据边界 |
 | 严格校验的离线解锁／恢复工具 | [tools/patch_unlock.py](tools/patch_unlock.py) | 支持指定 2.01 原始 App 和配套 WBI 镜像；不连接相机 |
-| 16.530 秒版本的机内完整合成 | [native/](native/) | 原始处理代码，仅整理 include 路径；跨目录源码依赖已收齐 |
-| AArch64 交叉编译与 Python 相机调用 | [tools/build.py](tools/build.py)、[tools/run_camera.py](tools/run_camera.py) | 依赖用户本地 A7C2Tools 和指定 Turbo 构建 |
-| 计时、CRC、配置与来源 | [evidence/](evidence/) | 从原始机内日志提取的公开记录，不包含私有完整日志 |
+| 16.530 秒版本的机内完整合成 | [native/](native/) | 保留处理算法与参数；临时文件改用项目自己的目录，不含设备连接与加载工具 |
+| 独立 AArch64 交叉编译 | [tools/build.py](tools/build.py) | 使用 Zig 和指定 Turbo 构建，不连接相机 |
+| 计时、校验值、配置与来源 | [evidence/](evidence/) | 从原始机内日志提取的公开记录，不包含私有完整日志 |
 
 本项目为**源码公开、仅限非商业用途**的研究工程，原创部分适用 [项目非商业使用许可](LICENSE)。由于包含非商业限制，它不属于 [OSI 定义的开源软件](https://opensource.org/osd)。第三方部分仍按各自原有许可使用，详见 [NOTICE](NOTICE)。不分发 Sony 固件、启动快照、照片、SDK、驱动或个人机身标识。
 
@@ -62,9 +66,9 @@ English licensing note: Original project components are source-available for non
 ## 开始使用
 
 1. 先阅读 [设备风险与使用约定](docs/notices.md) 和 [解锁方法](docs/unlock.md)。离线工具只生成单独的镜像副本，不能当成 Sony 官方升级包刷入。
-2. 按 [构建说明](docs/build-and-run.md) 准备 Zig 0.13.0、AArch64 Turbo 静态库和本地 A7C2Tools 3.03。
+2. 按 [构建说明](docs/build-and-run.md) 准备 Python、Zig 0.13.0 和 AArch64 Turbo 静态库。
 3. 执行源码检查与编译。编译不会连接相机。
-4. 机内调用需要自己的机身绑定、运行库校验和私有曲线文件；只有显式执行相机脚本才会连接和合成。
+4. 本仓库不提供 USB 连接、安装器或机内加载脚本。机内集成仍需另行实现设备身份和运行库校验，并准备私有曲线文件。
 
 ```console
 python -m unittest discover -s tests -v
@@ -75,6 +79,7 @@ python tools/build.py --zig /path/to/zig --jpeg-dir /path/to/official-arm64
 
 ## 当前边界
 
+- **16.530 秒是清理前版本的历史实测**。当前源码已移除外部工具接入，改用 `/tmp/a7c2-pixelshift/`，不再删除加载器文件；未重新进行机内性能测试，不能将历史耗时视为当前版本的新实测。
 - **本版固定为历史参考数据组**：`101MSDCF/DSC03044.ARW`～`DSC03059.ARW`，组号、白平衡、黑白电平、逐帧源 CRC、线性 CRC 和 JPEG 主体 CRC 都有固定校验。其他照片会被拒绝。它不是自动扫描任意 16 张照片的通用产品。
 - 历史基线输出到新的 `173MSDCF/DSC00001.JPG`，目录已存在时拒绝执行。后续“追加到已有目录末尾”的实现不在这个计时基线内。
 - **131 MP 成片机内放大仍失败**。同一份合成像素下采样到 7008×4672 的对照图，经用户确认可以放大；不能把该对照说成 131 MP 放大已修复。
