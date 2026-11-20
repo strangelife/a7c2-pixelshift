@@ -8,6 +8,7 @@
 - Zig **0.13.0**；目标 `aarch64-linux-gnu.2.25`。
 - AArch64 libjpeg-turbo **3.1.4.1** 的 `libjpeg.a` 和匹配的 `jpeglib.h/jconfig.h/jmorecfg.h/jerror.h`。
 - `python -m pip install -r requirements-dev.txt`，供 ELF 静态检查使用。
+- 合法取得且未修改的原版 2.01 解包目录，文件须符合 [原版基线清单](firmware.md)。
 
 历史 Turbo 静态库 SHA-256：
 
@@ -19,14 +20,15 @@ b2db824adb96ed9f4c1864caff2ae5dae92bac135359f5ce3e8b4b2888e0138a
 
 ```console
 python -m pip install -r requirements-dev.txt
-python tools/build.py --zig /path/to/zig --jpeg-dir /path/to/official-arm64 --dcf 173
+python tools/verify_firmware.py --root /path/to/original-2.01
+python tools/build.py --firmware-root /path/to/original-2.01 --zig /path/to/zig --jpeg-dir /path/to/official-arm64 --dcf 173
 ```
 
-产物位于被 Git 忽略的 `build/camera-merge.so` 和 `build/build.json`。脚本检查 AArch64、共享对象类型、不可写的可执行段、无 text relocation、一个初始化入口，以及模块／源码哈希。`--dcf` 仅选择历史方案的新输出目录编号，不改变合成参数。
+产物位于被 Git 忽略的 `build/camera-merge.so` 和 `build/build.json`。脚本先只读核对原版 App、CP、运行库和 WBI 的完整哈希及 19 处原生函数签名，随后检查 AArch64、共享对象类型、不可写的可执行段、无 text relocation、一个初始化入口，以及模块／源码哈希。`--dcf` 仅选择历史方案的新输出目录编号，不改变合成参数。
 
 ## 历史基线与当前源码
 
-16.530 秒记录对应的历史模块为 **432,528 字节**，SHA-256：
+16.530 秒记录来自已有修改的机身配置，对应的历史模块为 **432,528 字节**，SHA-256：
 
 ```text
 9bca0b29700446f503027e6b60347623deb27dd48e823619d9af0cd50f654e87
@@ -38,7 +40,7 @@ python tools/build.py --zig /path/to/zig --jpeg-dir /path/to/official-arm64 --dc
 
 模块保留标准 ELF 初始化入口，加载即执行一次固定数据组合成。仓库没有实现设备连接和模块加载；下列内容是原生源码的输入输出约定，不是可直接执行的相机安装流程。
 
-集成方负责核验设备身份、固件及运行库版本、模块和私有输入哈希；负责在加载前创建本任务独占的临时目录、确认旧结果不存在，并在执行结束后回收文件和卸载模块。不能将旧结果当成本次成功，也不能在处理线程仍运行时删除缓冲或卸载模块。
+集成方负责核验设备身份，并按 [原版清单](../profiles/original-2.01.json) 核对实际设备上的 App、CP 及运行库哈希，同时核对模块和私有输入；电脑上的原版校验不能替代设备核验。集成方还负责在加载前创建本任务独占的临时目录、确认旧结果不存在，并在执行结束后回收文件和卸载模块。不能将旧结果当成本次成功，也不能在处理线程仍运行时删除缓冲或卸载模块。
 
 | 路径 | 用途 |
 | --- | --- |

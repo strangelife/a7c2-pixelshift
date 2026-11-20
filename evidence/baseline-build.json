@@ -38,5 +38,9 @@
   "aligned_RAW_allocation": 4096,
   "aligned_file_read_offsets": 512,
   "historical_module_sha256": "9bca0b29700446f503027e6b60347623deb27dd48e823619d9af0cd50f654e87",
-  "note": "Historical measured build, not a claim that a relocated source build is byte-identical."
+  "note": "Historical measured build, not a claim that a relocated source build is byte-identical.",
+  "record_type": "historical-measured-build",
+  "historical_camera_used_unmodified_firmware": false,
+  "current_required_input_profile": "profiles/original-2.01.json",
+  "current_original_firmware_camera_tested": false
 }

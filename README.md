@@ -17,9 +17,11 @@ Sony A7C II（ILCE-7CM2）像素位移解锁研究，以及 **16 帧 → 131 MP 
 
 **当前交付的是研究源码，不是下载安装后即可在相机运行的应用。** 公开仓库可以独立进行离线检查；构建需要另行准备编译器及指定 JPEG 静态库。机内运行还缺设备连接与加载实现，以及历史测试照片和曲线文件。首次阅读请从 [项目原理与代码导读](docs/overview.md) 开始，无需阅读此前的聊天或研究记录。
 
-**真实机身记录：完整合成、写卡、完整读回和发布为 16.5295185 秒，四舍五入 16.530 秒。**
+**当前统一以未修改的原版 2.01 固件为输入基线**：[原版文件清单](profiles/original-2.01.json)。App、CP、运行库和 WBI 共 7 个文件已离线核对，19 处原生文件服务签名与原版一致。构建要求先通过原版校验；这不代表已经在原版机身上运行通过，详见 [固件基线说明](docs/firmware.md)。
 
-English: Research code for Sony A7C II pixel-shift software gates and an on-camera 16-frame, 131 MP JPEG pipeline. The recorded 16.530 s includes synthesis, SD writing, full readback and publication. This is a firmware-specific reference implementation, not a general-purpose one-click camera application.
+**历史真实机身记录：完整合成、写卡、完整读回和发布为 16.5295185 秒，四舍五入 16.530 秒。该次机身固件已有修改，原版基线尚无机内计时。**
+
+English: Research code for Sony A7C II pixel-shift software gates and an on-camera 16-frame, 131 MP JPEG pipeline. Current builds require verified, unmodified 2.01 firmware inputs. The historical 16.530 s run used a modified camera firmware configuration; it is not an on-camera validation of the original firmware baseline. This is a firmware-specific reference implementation, not a general-purpose one-click camera application.
 
 ## 项目包括什么
 
@@ -29,6 +31,7 @@ English: Research code for Sony A7C II pixel-shift software gates and an on-came
 | 严格校验的离线解锁／恢复工具 | [tools/patch_unlock.py](tools/patch_unlock.py) | 支持指定 2.01 原始 App 和配套 WBI 镜像；不连接相机 |
 | 16.530 秒版本的机内完整合成 | [native/](native/) | 保留处理算法与参数；临时文件改用项目自己的目录，不含设备连接与加载工具 |
 | 独立 AArch64 交叉编译 | [tools/build.py](tools/build.py) | 使用 Zig 和指定 Turbo 构建，不连接相机 |
+| 原版固件输入校验 | [tools/verify_firmware.py](tools/verify_firmware.py) | 只读核对原版 App、CP、运行库、WBI 和原生函数签名 |
 | 计时、校验值、配置与来源 | [evidence/](evidence/) | 从原始机内日志提取的公开记录，不包含私有完整日志 |
 
 本项目为**源码公开、仅限非商业用途**的研究工程，原创部分适用 [项目非商业使用许可](LICENSE)。由于包含非商业限制，它不属于 [OSI 定义的开源软件](https://opensource.org/osd)。第三方部分仍按各自原有许可使用，详见 [NOTICE](NOTICE)。不分发 Sony 固件、启动快照、照片、SDK、驱动或个人机身标识。
@@ -66,7 +69,7 @@ English licensing note: Original project components are source-available for non
 ## 开始使用
 
 1. 先阅读 [设备风险与使用约定](docs/notices.md) 和 [解锁方法](docs/unlock.md)。离线工具只生成单独的镜像副本，不能当成 Sony 官方升级包刷入。
-2. 按 [构建说明](docs/build-and-run.md) 准备 Python、Zig 0.13.0 和 AArch64 Turbo 静态库。
+2. 按 [固件基线说明](docs/firmware.md) 准备合法取得的原版 2.01 解包目录，再按 [构建说明](docs/build-and-run.md) 准备 Python、Zig 0.13.0 和 AArch64 Turbo 静态库。
 3. 执行源码检查与编译。编译不会连接相机。
 4. 本仓库不提供 USB 连接、安装器或机内加载脚本。机内集成仍需另行实现设备身份和运行库校验，并准备私有曲线文件。
 
@@ -74,7 +77,8 @@ English licensing note: Original project components are source-available for non
 python -m unittest discover -s tests -v
 python tools/audit_public.py
 python tools/patch_unlock.py inspect --image app --input /path/to/appFw.so
-python tools/build.py --zig /path/to/zig --jpeg-dir /path/to/official-arm64
+python tools/verify_firmware.py --root /path/to/original-2.01
+python tools/build.py --firmware-root /path/to/original-2.01 --zig /path/to/zig --jpeg-dir /path/to/official-arm64
 ```
 
 ## 当前边界
@@ -86,7 +90,7 @@ python tools/build.py --zig /path/to/zig --jpeg-dir /path/to/official-arm64
 - **16.530 秒基线没有后续 DISP 修复**。后续保留 Sony MakerNote／HiddenData 的版本耗时 16.8147375 秒，用户已确认 DISP 恢复；本项目记录其结果，不把该修复混入 16.530 秒版本。
 - 没有可见的机身合成文字或进度条。原生提示测试未通过用户可见性验收，相关尝试未集成。
 - 解锁与合成是两个环节。旧研究报告过“保持摇摇乐开启关机，再开机报错”；当前资料不足以标记为已修复。旧规避记录是关机前将摇摇乐置 OFF。
-- 解锁补丁严格限定指定固件哈希。已修改 FL2／FL3、LUT 或其他内容的 App 不适用原始固件补丁。合成测试机的 App 已有修改，其哈希与原始解锁候选不同。
+- 解锁和构建均以清单规定的原版文件为输入，已有修改的文件会被拒绝。解锁工具生成的候选副本属于输出，必然与原版不同；不得将其冒充原版输入。当前未恢复或写入任何相机固件。
 
 ## 贡献
 

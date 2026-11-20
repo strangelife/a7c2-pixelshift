@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+from verify_firmware import verify_firmware
 
 ROOT = Path(__file__).resolve().parents[1]
 JPEG_SHA = 'b2db824adb96ed9f4c1864caff2ae5dae92bac135359f5ce3e8b4b2888e0138a'
@@ -15,10 +16,15 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--zig', default='zig')
     p.add_argument('--jpeg-dir', required=True, type=Path, help='AArch64 libjpeg.a and its matching headers')
+    p.add_argument('--firmware-root', required=True, type=Path, help='Extracted unmodified Sony 2.01 firmware tree (read-only validation)')
     p.add_argument('--dcf', type=int, default=173)
     args = p.parse_args()
     if not 172 <= args.dcf < 999:
         p.error('The historical baseline uses a new unused DCF number in 172..998.')
+    try:
+        firmware = verify_firmware(args.firmware_root)
+    except (ValueError, OSError) as error:
+        p.error(str(error))
     jpeg = args.jpeg_dir.resolve()
     if hashlib.sha256((jpeg/'libjpeg.a').read_bytes()).hexdigest() != JPEG_SHA:
         p.error('Different Turbo archive. The measured profile pins the original AArch64 libjpeg-turbo archive.')
@@ -58,7 +64,7 @@ def main():
     manifest = dict(sha256=hashlib.sha256(blob).hexdigest(), bytes=len(blob), jpeg_sha256=JPEG_SHA,
                     dcf=f'{args.dcf}MSDCF', directory=f'PA{args.dcf}DMA', width=14016, height=9344,
                     batch=256, parallel=True, single_body_write=True, codec='turbo', elf_aarch64=True,
-                    host_execution=False, camera_execution=False,
+                    host_execution=False, camera_execution=False, firmware=firmware,
                     source_files={p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in native.iterdir() if p.is_file()})
     (dest/'build.json').write_text(json.dumps(manifest, indent=2)+'\n')
     print(json.dumps({k:v for k,v in manifest.items() if k != 'source_files'}, indent=2))

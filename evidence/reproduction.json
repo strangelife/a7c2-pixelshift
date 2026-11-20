@@ -59,6 +59,11 @@
       "native/stream_turbo.c": "f20235b52f3479dc9f02b0b987e3731cffc377fba15a5fcf5beb3cd65700cb7d",
       "native/target_module.c": "fcf5d389aeb881d6069858f6e4e20aaf226451e368fb10bb858ff68fc19b5d01",
       "native/three_trace.h": "c33b90cb1f3c726808ffd5f779059e4111b29af83879677e4cd7206c8bbfa60c"
-    }
+    },
+    "firmware_profile": "profiles/original-2.01.json",
+    "firmware_verification": "evidence/original-firmware-verification.json",
+    "original_firmware_files_verified": 7,
+    "native_Fsys_signatures_verified": 19,
+    "camera_firmware_original_baseline_tested": false
   }
 }
